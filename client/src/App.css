@@ -1,0 +1,180 @@
+.App {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  min-width: 300px;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.modal-content label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.modal-content input[type="text"],
+.modal-content input[type="datetime-local"] {
+  width: 95%; /* Adjust as needed */
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: block; /* Ensure input takes block space */
+}
+
+.modal-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end; /* Align buttons to the right */
+}
+
+.modal-actions button {
+  padding: 8px 15px;
+  margin-left: 10px; /* Space between buttons */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+}
+
+.modal-actions button:last-child {
+    background-color: #6c757d; /* Cancel button style */
+}
+
+.modal-actions button:hover {
+    opacity: 0.9;
+}
+
+/* Add these to App.css */
+.loading-indicator, .global-error {
+  text-align: center;
+  padding: 10px;
+  margin: 10px 20px;
+  border-radius: 4px;
+}
+
+.loading-indicator {
+  background-color: #e2e3e5; /* Light gray */
+  color: #343a40; /* Dark gray text */
+}
+
+.global-error {
+  background-color: #f8d7da; /* Light red */
+  color: #721c24; /* Dark red text */
+  border: 1px solid #f5c6cb; /* Reddish border */
+}
+
+/* Keep existing styles, add layout styles */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  font-family: sans-serif; /* Or your preferred font */
+   background-color: #f4f5f7; /* Light gray background for the whole page */
+}
+
+.app-container {
+  display: flex;
+  height: 100%; /* Full height */
+}
+
+.main-content {
+  flex-grow: 1; /* Take remaining width */
+  height: 100%;
+  display: flex;
+  flex-direction: column; /* Stack toolbar and calendar */
+  overflow: hidden; /* Prevent content overflow issues */
+   background-color: #fff; /* White background for content area */
+}
+
+.calendar-container {
+  flex-grow: 1; /* Allow calendar to fill remaining space */
+  padding: 0 20px 20px 20px; /* Padding around calendar */
+  overflow-y: auto; /* Allow calendar itself to scroll if needed */
+  position: relative; /* Needed for potential absolute positioning inside */
+}
+
+/* Adjust react-big-calendar default height if needed */
+.rbc-calendar {
+ min-height: 500px; /* Ensure calendar has a minimum height */
+ height: 100%; /* Try to fill container */
+}
+
+
+/* General Loading/Error Styles */
+.loading-indicator, .global-error {
+  text-align: center;
+  padding: 10px;
+  margin: 10px 20px; /* Adjust margin */
+  border-radius: 4px;
+}
+/* ... (keep existing loading/error styles) */
+
+/* Responsive: Hide sidebar on small screens (example) */
+@media (max-width: 768px) {
+  .app-sidebar {
+      display: none; /* Hide sidebar */
+  }
+   /* Removed empty ruleset for .main-content */
+   .calendar-container {
+        padding: 0 10px 10px 10px; /* Reduce padding */
+   }
+}
